@@ -16,6 +16,10 @@ const schema = mongoose.Schema({
         type: Number,
         default: -1
     },
+    location: {
+        // Initial location
+        type: String
+    },
     priority: {
         // -1=Unknown, 0=Green, 1=Yellow, 2=Red, 3=Black
         type: Number,
