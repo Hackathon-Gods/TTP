@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const PersonTriageSchema = mongoose.Schema({
+const schema = mongoose.Schema({
     // Target of triage, in Person collection
     personId: {
         type: mongoose.Types.ObjectId,
@@ -8,7 +8,8 @@ const PersonTriageSchema = mongoose.Schema({
     },
     date: {
         // Date of triage
-        type: Date
+        type: Date,
+        default: Date.now
     },
     location: {
         // Location of triage
@@ -20,6 +21,6 @@ const PersonTriageSchema = mongoose.Schema({
     }
 })
 
-const PersonTriage = mongoose.model(PersonTriageSchema)
+const Model = mongoose.model('triage', schema)
 
-module.exports = PersonTriage
+module.exports = Model

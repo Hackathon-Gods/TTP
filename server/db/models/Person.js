@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const PersonSchema = mongoose.Schema({
+const schema = mongoose.Schema({
     fname: {
         // First name
         type: String,
@@ -40,12 +40,7 @@ const PersonSchema = mongoose.Schema({
     },
     bloodPressure: {
         // Blood pressure
-        type: Number,
-        default: -1
-    },
-    transportDataId: {
-        // Transport data, in another collection
-        type: mongoose.Types.ObjectId
+        type: String
     },
     qrData: {
         // String data of QR
@@ -53,6 +48,6 @@ const PersonSchema = mongoose.Schema({
     }
 })
 
-const Person = mongoose.model('person', PersonSchema)
+const Model = mongoose.model('person', schema)
 
-module.exports = Person
+module.exports = Model

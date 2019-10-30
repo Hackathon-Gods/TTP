@@ -1,9 +1,15 @@
 const mongoose = require('mongoose')
 
-const TransportDataSchema = mongoose.Schema({
+const schema = mongoose.Schema({
+    personId: {
+        // Target of transport, in Person collection
+        type: mongoose.Types.ObjectId,
+        unique: true
+    },
     start: {
         // Start time
-        type: Date
+        type: Date,
+        default: Date.now
     },
     destCoordinates: {
         // Destination coordinates
@@ -19,6 +25,6 @@ const TransportDataSchema = mongoose.Schema({
     }
 })
 
-const TransportData = mongoose.model('transport_data', TransportDataSchema)
+const Model = mongoose.model('transport', schema)
 
-module.exports = TransportData
+module.exports = Model
