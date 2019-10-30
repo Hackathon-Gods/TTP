@@ -3,7 +3,7 @@ const app = express()
 const routes = require('./routes/index.js')
 require('./db/connect.js')(app)
 
-app.use(express.json({ extended: false }))
+app.use(express.json())
 
 // Test route
 app.get('/', (req, res) => res.send('Hello World!'))
