@@ -22,6 +22,7 @@
   "homepage": "https://github.com/synzen/TTP#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-validator": "^6.2.0",
     "mongoose": "^5.7.7"
   },
   "devDependencies": {
